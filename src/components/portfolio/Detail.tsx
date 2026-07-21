@@ -53,7 +53,9 @@ const Detail = ({ id }: DetailProps) => {
       </div>
 
       <div className="overflow-hidden rounded-[32px] border border-neutral-800 bg-neutral-900">
-        <ImageCarousel images={data.project_images} alt={data.proj_name} />
+        <div className="aspect-video">
+          <ImageCarousel images={data.project_images} alt={data.proj_name} />
+        </div>
       </div>
 
       <div className="mt-24 grid gap-20 lg:grid-cols-[320px_1fr]">
