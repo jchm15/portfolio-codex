@@ -41,11 +41,11 @@ const Header = () => {
           {NAV_ITEMS.map((item) => {
             const active = item.matchPaths.some((path) => {
               if (path === '/') {
-                return location.pathname === '/'
+                return location.pathname === '/';
               }
 
-              return location.pathname.startsWith(path)
-            })
+              return location.pathname.startsWith(path);
+            });
 
             return (
               <Link
