@@ -5,10 +5,12 @@ const NAV_ITEMS = [
   {
     to: '/',
     label: '~/home',
+    matchPaths: ['/'],
   },
   {
     to: '/portfolio',
     label: './projects',
+    matchPaths: ['/portfolio', '/detail'],
   },
 ] as const;
 
@@ -37,7 +39,13 @@ const Header = () => {
 
         <nav className="flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/60 p-1 backdrop-blur-xl">
           {NAV_ITEMS.map((item) => {
-            const active = location.pathname === item.to;
+            const active = item.matchPaths.some((path) => {
+              if (path === '/') {
+                return location.pathname === '/'
+              }
+
+              return location.pathname.startsWith(path)
+            })
 
             return (
               <Link
