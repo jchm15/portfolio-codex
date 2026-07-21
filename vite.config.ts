@@ -1,9 +1,9 @@
-import { default as react, reactCompilerPreset } from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
-import babel from '@rolldown/plugin-babel'
-import { tanstackRouter } from '@tanstack/router-plugin/vite'
-import tailwindcss from '@tailwindcss/vite'
-import { fileURLToPath, URL } from 'node:url'
+import { default as react, reactCompilerPreset } from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+import babel from '@rolldown/plugin-babel';
+import { tanstackRouter } from '@tanstack/router-plugin/vite';
+import tailwindcss from '@tailwindcss/vite';
+import { fileURLToPath, URL } from 'node:url';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -22,10 +22,7 @@ export default defineConfig({
       routesDirectory: './src/routes',
       generatedRouteTree: './src/routeTree.gen.ts',
       autoCodeSplitting: true,
-      routeTreeFileHeader: [
-        '/* eslint-disable */',
-        '// noinspection JSUnusedGlobalSymbols',
-      ],
+      routeTreeFileHeader: ['/* eslint-disable */', '// noinspection JSUnusedGlobalSymbols'],
       routeTreeFileFooter: ['export {}'],
     }),
     react(),
@@ -35,4 +32,4 @@ export default defineConfig({
       exclude: [/src\/routeTree\.gen\.ts/, /node_modules/],
     }),
   ],
-})
+});

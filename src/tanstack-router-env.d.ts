@@ -1,3 +1,3 @@
-import './routeTree.gen'
+import './routeTree.gen';
 
-export {}
+export {};
