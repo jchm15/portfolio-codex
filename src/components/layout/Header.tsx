@@ -41,7 +41,7 @@ const Header = () => {
         {/* Navigation */}
         <nav className="flex items-center gap-0.5 rounded-full border border-neutral-800 bg-neutral-900/60 p-1 backdrop-blur-xl md:gap-2">
           {NAV_ITEMS.map((item) => {
-            const active = item.matchPaths.some((path) => {
+            const active = item.matchPaths.some((path: string) => {
               if (path === '/') {
                 return location.pathname === '/';
               }
