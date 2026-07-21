@@ -24,7 +24,8 @@ const Header = () => {
       transition={{ duration: 0.7 }}
       className="sticky top-0 z-50 border-b border-neutral-900 bg-neutral-950/70 backdrop-blur-2xl"
     >
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 md:px-6">
+        {/* Logo */}
         <Link to="/" className="group flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-800 bg-neutral-900 transition-all duration-300 group-hover:border-[#C9A66B]/40 group-hover:bg-[#C9A66B]/10">
             <span className="font-mono text-sm text-[#C9A66B]">&gt;_</span>
@@ -37,7 +38,8 @@ const Header = () => {
           </div>
         </Link>
 
-        <nav className="flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/60 p-1 backdrop-blur-xl">
+        {/* Navigation */}
+        <nav className="flex items-center gap-0.5 rounded-full border border-neutral-800 bg-neutral-900/60 p-1 backdrop-blur-xl md:gap-2">
           {NAV_ITEMS.map((item) => {
             const active = item.matchPaths.some((path) => {
               if (path === '/') {
@@ -51,7 +53,7 @@ const Header = () => {
               <Link
                 key={item.to}
                 to={item.to}
-                className={`relative rounded-full px-5 py-2 font-mono text-xs transition-all duration-300 ${
+                className={`relative shrink-0 rounded-full px-3 py-2 font-mono text-xs transition-all duration-300 md:px-5 ${
                   active ? 'text-neutral-950' : 'text-neutral-500 hover:text-neutral-100'
                 }`}
               >
@@ -73,6 +75,7 @@ const Header = () => {
           })}
         </nav>
 
+        {/* Status */}
         <div className="hidden items-center gap-3 lg:flex">
           <div className="flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-4 py-2">
             <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
