@@ -1,0 +1,3 @@
+import './routeTree.gen'
+
+export {}
