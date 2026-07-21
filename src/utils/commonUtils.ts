@@ -1,14 +1,14 @@
-const formatDateKST = (dateString: string): string => {
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat('ko-KR', {
-    timeZone: 'Asia/Seoul',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  })
-    .format(date)
-    .replace(/\. /g, '-')
-    .replace('.', '');
-};
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
 
-export default formatDateKST;
+dayjs.extend(utc)
+dayjs.extend(timezone)
+
+const formatDateKST = (dateString: string): string => {
+  return dayjs(dateString)
+      .tz('Asia/Seoul')
+      .format('YYYY-MM-DD')
+}
+
+export default formatDateKST
