@@ -48,7 +48,7 @@ const Footer = () => {
                 return (
                   <div
                     key={stack.id}
-                    className="flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-4 py-2 transition hover:border-[#C9A66B]/40"
+                    className="group relative flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-4 py-2 transition hover:border-[#C9A66B]/40"
                   >
                     <Icon
                       size={16}
@@ -57,7 +57,16 @@ const Footer = () => {
                       }}
                     />
 
-                    <span className="text-sm text-neutral-300">{stack.name}</span>
+                    {/* Tooltip */}
+                    <div
+                      className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md border border-neutral-800 bg-neutral-900
+                                 px-3 py-1.5 text-xs text-neutral-200 opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100"
+                    >
+                      {stack.name}
+
+                      {/* Tooltip Arrow */}
+                      <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-neutral-900" />
+                    </div>
                   </div>
                 );
               })}
