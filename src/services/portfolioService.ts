@@ -5,7 +5,7 @@ export interface Portfolio {
   proj_name: string;
   start_date: string;
   end_date: string;
-  project_details: { description: string } | null;
+  project_details: { description: string; contents: string } | null;
   project_skills: { id: number; skill_name: string }[];
   project_images: { id: number; image_url: string }[];
   project_roles: { id: number; role_name: string }[];
@@ -70,13 +70,14 @@ export const getPortfolioDetail = async (id: string | number): Promise<Portfolio
             proj_name,
             start_date,
             end_date,
-            project_details ( description ),
+            project_details ( proj_id, description, contents ),
             project_skills ( id, skill_name ),
             project_images ( id, image_url ),
             project_roles ( id, role_name )
         `
     )
     .eq('id', id)
+    .order('id', { referencedTable: 'project_roles', ascending: true })
     .single();
 
   if (error) throw error;

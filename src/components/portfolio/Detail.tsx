@@ -106,6 +106,31 @@ const Detail = ({ id }: DetailProps) => {
               {data.project_details?.description}
             </p>
           </div>
+
+          <div className="my-16 flex items-center gap-4">
+            <span className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-700 to-neutral-700" />
+            <span className="h-1.5 w-1.5 rotate-45 border border-[#C9A66B]" />
+            <span className="h-px flex-1 bg-gradient-to-l from-transparent via-neutral-700 to-neutral-700" />
+          </div>
+
+          <p className="mb-6 font-mono text-xs uppercase tracking-[0.35em] text-[#C9A66B]">Details</p>
+
+          <div
+            className="prose prose-invert max-w-none text-lg leading-9 text-neutral-300
+              prose-headings:font-serif prose-headings:text-white
+              prose-h2:mt-12 prose-h2:mb-4 prose-h2:text-3xl
+              prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl
+              prose-p:leading-9 prose-p:text-neutral-300
+              prose-strong:text-[#C9A66B] prose-strong:font-semibold
+              prose-a:text-[#C9A66B] prose-a:underline prose-a:underline-offset-4 prose-a:decoration-neutral-700 hover:prose-a:decoration-[#C9A66B]
+              prose-ul:my-6 prose-li:marker:text-[#C9A66B]
+              prose-ol:my-6
+              prose-blockquote:border-l-[#C9A66B] prose-blockquote:text-neutral-400 prose-blockquote:not-italic
+              prose-hr:border-neutral-800
+              prose-img:rounded-2xl prose-img:border prose-img:border-neutral-800
+              prose-code:text-[#C9A66B] prose-code:bg-neutral-900 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none"
+            dangerouslySetInnerHTML={{ __html: data.project_details?.contents ?? '' }}
+          />
         </article>
       </div>
     </section>
