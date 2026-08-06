@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=22.0.0 <23.0.0"
+  },
   "scripts": {
     "generate:routes": "node scripts/generate-route-tree.mjs",
     "predev": "npm run generate:routes",

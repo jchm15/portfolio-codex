@@ -18,7 +18,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
     tanstackRouter({
       routesDirectory: './src/routes',
       generatedRouteTree: './src/routeTree.gen.ts',
