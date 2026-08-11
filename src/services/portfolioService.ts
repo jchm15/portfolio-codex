@@ -25,7 +25,7 @@ export const getPortfolioList = async (limit?: number): Promise<Portfolio[]> => 
             project_images ( id, image_url )
         `
     )
-    .order('id', { ascending: true });
+    .order('sortBy', { ascending: false });
 
   if (limit) {
     query = query.limit(limit);
