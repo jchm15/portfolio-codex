@@ -49,7 +49,7 @@ export const getPortfolioGallery = async (limit: number = 0): Promise<Portfolio[
             project_images ( id, image_url )
         `
     )
-    .order('id', { ascending: true });
+    .order('sortBy', { ascending: true });
 
   if (limit) {
     query = query.limit(limit);
