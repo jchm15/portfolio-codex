@@ -17,14 +17,14 @@ const Footer = () => {
             <p className="mt-3 text-lg text-neutral-400">Frontend Developer</p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="https://github.com/jchm15"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-neutral-700 px-6 py-3 text-sm text-neutral-300 transition hover:border-[#C9A66B]/40 hover:text-white"
-              >
-                GitHub
-              </a>
+              {/*<a*/}
+              {/*  href="https://github.com/jchm15"*/}
+              {/*  target="_blank"*/}
+              {/*  rel="noopener noreferrer"*/}
+              {/*  className="rounded-full border border-neutral-700 px-6 py-3 text-sm text-neutral-300 transition hover:border-[#C9A66B]/40 hover:text-white"*/}
+              {/*>*/}
+              {/*  GitHub*/}
+              {/*</a>*/}
 
               <a
                 href="mailto:jchm15@naver.com"
