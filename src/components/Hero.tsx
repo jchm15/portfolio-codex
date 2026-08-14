@@ -50,9 +50,9 @@ const Hero = () => {
                 <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
 
-              <button className="rounded-full border border-neutral-700 px-7 py-3 text-sm font-medium text-neutral-300 transition-all duration-300 hover:border-neutral-500 hover:bg-neutral-900 hover:text-white">
-                GitHub
-              </button>
+              {/*<button className="rounded-full border border-neutral-700 px-7 py-3 text-sm font-medium text-neutral-300 transition-all duration-300 hover:border-neutral-500 hover:bg-neutral-900 hover:text-white">*/}
+              {/*  GitHub*/}
+              {/*</button>*/}
             </div>
           </motion.div>
 
